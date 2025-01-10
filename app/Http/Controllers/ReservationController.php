@@ -81,5 +81,78 @@ class ReservationController extends Controller
             'status' => 'Valid QR Code',
             'reservation' => $reservation
         ]);
+        
     }
+    public function update(Request $request, $id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($id);
+            
+            // Check if time slot is available
+            $existingReservation = Reservation::where('reservation_date', $request->reservation_date)
+                ->where('reservation_time', $request->reservation_time)
+                ->where('id', '!=', $id)
+                ->first();
+                
+            if ($existingReservation) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'This time slot is already booked'
+                ], 400);
+            }
+
+            $reservation->update([
+                'reservation_date' => $request->reservation_date,
+                'reservation_time' => $request->reservation_time
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Reservation updated successfully',
+                'reservation' => $reservation
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error updating reservation: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+    public function destroy($id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($id);
+            $reservation->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Reservation cancelled successfully'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error cancelling reservation: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+    public function checkAvailability(Request $request)
+    {
+        try {
+            $existingReservation = Reservation::where('reservation_date', $request->date)
+                ->where('reservation_time', $request->time)
+                ->first();
+
+            return response()->json([
+                'success' => true,
+                'available' => !$existingReservation
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error checking availability: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    
 }
