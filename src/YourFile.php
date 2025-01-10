@@ -1,0 +1,2 @@
+use Endroid\QrCode\ErrorCorrectionLevel;
+
