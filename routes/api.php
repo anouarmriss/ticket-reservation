@@ -10,3 +10,4 @@ Route::get('/validate/{qr_code}', [ReservationController::class, 'validateQrCode
 Route::put('/reservations/{id}', [ReservationController::class, 'update']);
 Route::delete('/reservations/{id}', [ReservationController::class, 'destroy']);
 Route::post('/reservations/check-availability', [ReservationController::class, 'checkAvailability']);
+Route::delete('/reservations/{id}', [ReservationController::class, 'cancel']);
