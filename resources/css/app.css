@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Fill viewport */
+    width: 100%; /* Fill viewport */
+    font-family: Arial, sans-serif; /* Optional styling */
+  }
+  
+  #app {
+    height: 100%; /* Make Vue app stretch to fill */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  html, body {
+    @apply m-0 p-0 w-full h-full;
+  }
+  
+  #app {
+    @apply w-full h-full;
+  }
+  

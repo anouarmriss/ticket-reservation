@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <nav class="bg-gray-800 p-4">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
+  <div class="app-wrapper">
+    <nav class="bg-gray-800 w-full">
+      <div class="max-w-full px-4 py-4 flex justify-between items-center">
         <router-link to="/" class="text-white text-xl font-bold">Tourist Site</router-link>
         <div class="space-x-4">
           <router-link to="/reservation" class="text-white hover:text-gray-300">Make Reservation</router-link>
@@ -9,13 +9,22 @@
         </div>
       </div>
     </nav>
-
-    <router-view></router-view>
+    
+    <main class="w-full">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
+<style>
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-</script>
+
+main {
+  flex: 1;
+}
+</style>

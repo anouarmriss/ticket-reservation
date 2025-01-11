@@ -8,7 +8,7 @@
             Tourist Site
           </router-link>
           <div class="flex space-x-8">
-            <router-link 
+            <router-link  
               to="/reservation" 
               class="text-gray-600 hover:text-cyan-600 transition-colors font-medium"
             >
