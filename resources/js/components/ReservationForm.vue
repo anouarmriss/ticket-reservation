@@ -1,5 +1,6 @@
 <script>
-import api from '../services/api'  // Update this line
+
+import api from '../services/api.js'  // note the .js extension
 
 export default {
   data() {
