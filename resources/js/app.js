@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import App from "./app.vue";
-import "../../Frontend/src/assets/main.css"; 
+import App from "./App.vue"; // note the capital A
+import "./bootstrap";
 
 const app = createApp(App);
 app.mount("#app");
