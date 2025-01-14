@@ -13,8 +13,15 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "resources/js"),
+            "@": path.resolve(__dirname, "src"),
             "~": path.resolve(__dirname, "resources"),
+        },
+    },
+    build: {
+        manifest: true,
+        outDir: "public/build",
+        rollupOptions: {
+            input: "resources/js/app.js",
         },
     },
 });
