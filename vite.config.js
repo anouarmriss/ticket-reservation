@@ -6,29 +6,22 @@ import path from "path";
 export default defineConfig({
     plugins: [
         laravel({
-            input: "resources/js/app.js",
+            input: ["resources/js/app.js"],
             refresh: true,
         }),
-        vue({
-            template: {
-                transformAssetUrls: {
-                    base: null,
-                    includeAbsolute: false,
-                },
-            },
-        }),
+        vue(),
     ],
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "resources/js"),
-            "~": path.resolve(__dirname, "resources"),
+            "@": path.resolve(__dirname, "./resources/js"),
             vue: "vue/dist/vue.esm-bundler.js",
         },
     },
-    base: "/",
     build: {
         manifest: true,
         outDir: "public/build",
-        assetsDir: "assets",
+        rollupOptions: {
+            input: "resources/js/app.js",
+        },
     },
 });
