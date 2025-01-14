@@ -8,6 +8,7 @@ export default defineConfig({
         laravel({
             input: ["resources/js/app.js"],
             refresh: true,
+            buildDirectory: "build",
         }),
         vue(),
     ],
@@ -18,7 +19,7 @@ export default defineConfig({
         },
     },
     build: {
-        manifest: true,
+        manifest: "manifest.json",
         outDir: "public/build",
         rollupOptions: {
             input: "resources/js/app.js",
