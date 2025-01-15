@@ -1,21 +1,16 @@
 <template>
-  <div>
-    <nav class="bg-white shadow-lg">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <router-link to="/" class="flex items-center">
-              <span class="text-xl font-bold text-gray-900">Tourist Site</span>
-            </router-link>
-          </div>
-          <div class="flex items-center">
-            <router-link 
-              to="/reservation" 
-              class="text-gray-700 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Book Now
-            </router-link>
-          </div>
+  <div class="min-h-screen">
+    <nav class="bg-gray-800 p-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <router-link to="/" class="text-white text-xl font-bold">Tourist Site</router-link>
+        <div class="space-x-4">
+          <router-link to="/reservation" class="text-white hover:text-gray-300">Make Reservation</router-link>
+          <router-link to="/reservations" class="text-white hover:text-gray-300">View Reservations</router-link>
+          <template v-if="isAdmin">
+            <router-link to="/admin" class="text-white hover:text-gray-300">Admin</router-link>
+            <button @click="logout" class="text-white hover:text-gray-300">Logout</button>
+          </template>
+          <router-link v-else to="/login" class="text-white hover:text-gray-300">Admin Login</router-link>
         </div>
       </div>
     </nav>
@@ -26,6 +21,30 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      isAdmin: false
+    }
+  },
+  methods: {
+    checkAdminStatus() {
+      this.isAdmin = localStorage.getItem('isAdmin') === 'true'
+    },
+    logout() {
+      localStorage.removeItem('isAdmin')
+      this.isAdmin = false
+      if (this.$route.meta.requiresAuth) {
+        this.$router.push('/login')
+      }
+    }
+  },
+  mounted() {
+    this.checkAdminStatus()
+    window.addEventListener('storage', this.checkAdminStatus)
+  },
+  unmounted() {
+    window.removeEventListener('storage', this.checkAdminStatus)
+  }
 }
 </script>

@@ -8,7 +8,6 @@ export default defineConfig({
         laravel({
             input: ["resources/js/app.js"],
             refresh: true,
-            buildDirectory: "build",
         }),
         vue(),
     ],
@@ -16,13 +15,6 @@ export default defineConfig({
         alias: {
             "@": path.resolve(__dirname, "./resources/js"),
             vue: "vue/dist/vue.esm-bundler.js",
-        },
-    },
-    build: {
-        manifest: "manifest.json",
-        outDir: "public/build",
-        rollupOptions: {
-            input: "resources/js/app.js",
         },
     },
 });
