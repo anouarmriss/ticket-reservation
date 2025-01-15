@@ -14,19 +14,13 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./resources/js"),
+            "~": path.resolve(__dirname, "./resources"),
             vue: "vue/dist/vue.esm-bundler.js",
         },
     },
     build: {
         manifest: true,
         outDir: "public/build",
-        rollupOptions: {
-            input: "resources/js/app.js",
-        },
-    },
-    server: {
-        hmr: {
-            host: "localhost",
-        },
+        assetsDir: "assets",
     },
 });

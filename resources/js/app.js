@@ -1,25 +1,7 @@
+import "./bootstrap";
 import { createApp } from "vue";
-import { createRouter, createWebHistory } from "vue-router";
 import App from "./App.vue";
-import HomeView from "./views/HomeView.vue";
-import ReservationForm from "./components/ReservationForm.vue";
+import router from "./router";
+import "../css/app.css"; // Add this line
 
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {
-            path: "/",
-            name: "home",
-            component: HomeView,
-        },
-        {
-            path: "/reservation",
-            name: "reservation",
-            component: ReservationForm,
-        },
-    ],
-});
-
-const app = createApp(App);
-app.use(router);
-app.mount("#app");
+createApp(App).use(router).mount("#app");

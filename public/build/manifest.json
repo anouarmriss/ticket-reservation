@@ -1,11 +1,33 @@
 {
+  "public/images/capture-the-magic.jpg": {
+    "file": "assets/capture-the-magic-DPcI0r_r.jpg",
+    "src": "public/images/capture-the-magic.jpg"
+  },
+  "public/images/foyer-guide.jpg": {
+    "file": "assets/foyer-guide-BgjY8B3W.jpg",
+    "src": "public/images/foyer-guide.jpg"
+  },
+  "public/images/gates.jpg": {
+    "file": "assets/gates-D0fEt0uV.jpg",
+    "src": "public/images/gates.jpg"
+  },
+  "public/images/kimpton-fitzroy.jpg": {
+    "file": "assets/kimpton-fitzroy-B55dUf3-.jpg",
+    "src": "public/images/kimpton-fitzroy.jpg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-DfGnWpXg.js",
+    "file": "assets/app-CFgyGy52.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-C1TR3NSn.css"
+      "assets/app-B7uig1EO.css"
+    ],
+    "assets": [
+      "assets/gates-D0fEt0uV.jpg",
+      "assets/capture-the-magic-DPcI0r_r.jpg",
+      "assets/foyer-guide-BgjY8B3W.jpg",
+      "assets/kimpton-fitzroy-B55dUf3-.jpg"
     ]
   }
 }

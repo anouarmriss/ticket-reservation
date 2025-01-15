@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <div class="relative h-[600px]">
       <img 
-        src="/images/Gates_nn 165.jpg"
+        src="C:\Users\anwar\ticket-reservation\public\images\gates.jpg"
         alt="Tourist Site Main"
         class="w-full h-full object-cover"
       />
@@ -25,7 +25,7 @@
         <!-- Opening Hours -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <img 
-            src="/images/Capture the Magic 15 Iconic European Destinations Ready for Your Lens.jpg" 
+            src="C:\Users\anwar\ticket-reservation\public\images\capture-the-magic.jpg" 
             alt="Opening Hours" 
             class="w-full h-48 object-cover"
           />
@@ -42,7 +42,7 @@
         <!-- Visit Information -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <img 
-            src="/images/Foyer The Ultimate Guide to Creating a Welcoming Entryway.jpg" 
+            src="C:\Users\anwar\ticket-reservation\public\images\foyer-guide.jpg" 
             alt="Visit Information" 
             class="w-full h-48 object-cover"
           />
@@ -59,7 +59,7 @@
         <!-- Important Notes -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <img 
-            src="/images/The Kimpton Fitzroy, London.jpg" 
+            src="C:\Users\anwar\ticket-reservation\public\images\kimpton-fitzroy.jpg" 
             alt="Important Notes" 
             class="w-full h-48 object-cover"
           />
