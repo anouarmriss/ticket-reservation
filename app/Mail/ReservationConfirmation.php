@@ -22,10 +22,10 @@ class ReservationConfirmation extends Mailable
 
     public function build()
     {
-        return $this->subject('Your Reservation Confirmation - ' . $this->reservation->qr_code)
-                    ->view('emails.reservation-confirmation')
+        return $this->view('emails.reservation-confirmation')
+                    ->subject('Your Reservation Confirmation')
                     ->attach($this->qrCodePath, [
-                        'as' => 'your-ticket-qr-code.png',
+                        'as' => 'qr-code.png',
                         'mime' => 'image/png'
                     ]);
     }
